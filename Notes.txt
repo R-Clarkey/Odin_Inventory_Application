@@ -1,0 +1,9 @@
+psql:
+
+CREATE DATABASE inventory;
+
+connnect:
+\c inventory
+
+list tables:
+\d
