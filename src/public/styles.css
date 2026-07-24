@@ -1,0 +1,21 @@
+html, body{
+    margin: 0px;
+}
+
+#navBar-container{
+    display: flex;
+    padding: 5px;
+    background-color: #c3bebe;
+}
+
+#navBar-title{
+    width: 60%;
+}
+
+#navBar-links-container{
+    display: flex;
+    width: 40%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+}

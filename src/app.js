@@ -9,9 +9,8 @@ app.use(express.urlencoded({ extended: true }));
 const { loadEnvFile } = require('node:process');
 loadEnvFile();
 
-app.get("/", (req, res) => {
-    res.render("index");
-});
+const indexRouter = require("./routes/indexRoute")
+app.use("/", indexRouter)
 
 app.listen(process.env.PORT || 3000, (error) => {
   if (error) {
