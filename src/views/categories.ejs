@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/5c30b5e5d4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <%- include("partials/navBar") %>
+    <h2>All Categories</h2>
+    <div id="categories-container">
+        <% for( let category in categories ) { %>
+            <% console.log(categories[category]) %>
+            <div class="categories-item">
+                <div class="categories-item-image"><i class="fa-regular fa-image"></i></div>
+                <div class="categories-item-name"><%= categories[category].category_name %></div>
+                <div class="categories-item-link"><a class="link-text" href="/categories/<%= categories[category].category_id %>">View</a></div>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

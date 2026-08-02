@@ -12,6 +12,12 @@ loadEnvFile();
 const indexRouter = require("./routes/indexRoute")
 app.use("/", indexRouter)
 
+const categoriesRouter = require("./routes/categoriesRoute")
+app.use("/categories", categoriesRouter)
+
+const productsRouter = require("./routes/productsRoute")
+app.use("/products", productsRouter)
+
 app.listen(process.env.PORT || 3000, (error) => {
   if (error) {
     throw error;

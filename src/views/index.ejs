@@ -5,8 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop Inventory</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/5c30b5e5d4.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <%- include("partials/navBar") %>
+    <div id="index-category-container" class="index-container">
+        <h2 class="index-container-title">
+            Top Categories
+        </h2>
+        <a class="index-container-link" href="/categories">View All >>></a>
+        <div id="index-categories">
+            <% for( let index = 0; index < 5; index++ ) { %>
+                <% if (categories[index]) { %>
+                    <div class="index-category-item">
+                        <div class="index-category-image"><i class="fa-regular fa-image"></i></div>
+                        <div class="index-category-name"><%= categories[index].category_name %></div>
+                    </div>
+                <% } %>
+
+            <% } %>
+        </div>
+    </div>
+    <div id="index-product-container" class="index-container">
+        <h2 class="index-container-title">
+            Top Products
+        </h2>
+        <a class="index-container-link" href="/products">View All >>></a>
+        <div id="index-products">
+            <% for( let index = 0; index < 5; index++ ) { %>
+                <% if (products[index]) { %>
+                    <div class="index-product-item">
+                        <div class="index-product-image"><i class="fa-regular fa-image"></i></div>
+                        <div class="index-product-name"><%= products[index].product_name %></div>
+                    </div>
+                <% } %>
+
+            <% } %>
+        </div>
+    </div>
 </body>
 </html>
