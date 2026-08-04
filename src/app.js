@@ -1,26 +1,32 @@
 const path = require("node:path");
 const express = require("express");
+const dotenv = require("dotenv");
+
 const app = express();
+
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
 app.use(express.urlencoded({ extended: true }));
-const { loadEnvFile } = require('node:process');
-loadEnvFile();
 
-const indexRouter = require("./routes/indexRoute")
-app.use("/", indexRouter)
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config();
+}
 
-const categoriesRouter = require("./routes/categoriesRoute")
-app.use("/categories", categoriesRouter)
+const indexRouter = require("./routes/indexRoute");
+app.use("/", indexRouter);
 
-const productsRouter = require("./routes/productsRoute")
-app.use("/products", productsRouter)
+const categoriesRouter = require("./routes/categoriesRoute");
+app.use("/categories", categoriesRouter);
+
+const productsRouter = require("./routes/productsRoute");
+app.use("/products", productsRouter);
 
 app.listen(process.env.PORT || 3000, (error) => {
-  if (error) {
-    throw error;
-  }
-  console.log(`My first Express app - listening on port http://127.0.0.1:${process.env.PORT || 3000} !`);
+  if (error) throw error;
+  console.log(
+    `My first Express app - listening on port http://127.0.0.1:${process.env.PORT || 3000} !`
+  );
 });
