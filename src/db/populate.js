@@ -1,5 +1,7 @@
-const { loadEnvFile } = require('node:process');
-loadEnvFile('.env');
+const dotenv = require("dotenv");
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config();
+}
 const { Client } = require("pg");
 
 const SQL = `
