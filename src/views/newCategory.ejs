@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Product</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://kit.fontawesome.com/5c30b5e5d4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <%- include("partials/navBar") %>
+    <form action="/categories/new" method="post">
+        <div>
+            <label for="category_name">Category name</label>
+            <input
+            id="category_name"
+            name="category_name"
+            type="text"
+            required
+            />
+            <button type="submit">Create Category</button>
+        </div>
+    </form>
+</body>
+</html>

@@ -218,13 +218,13 @@ html, body{
   display: grid;
   width: 300px;
   height: 300px;
-  grid-template-columns: 80px 1fr 20px 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto auto 1fr;
 
   grid-template-areas:
     "image name   .   ."
     "image price  .   ."
-    "image .      .   quantity";
+    "image delete      .   quantity";
   row-gap: 4px;
   column-gap: 0;
   border: 1px solid #000;
@@ -252,4 +252,44 @@ html, body{
     grid-area: quantity;
     align-self: end;
     justify-self: end;
+}
+
+#product-delete-form{
+    grid-area: delete;
+}
+
+
+/* ========================== */
+
+
+#category-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.category-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.category-item-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 120px;
+    font-size: 2rem;
+}
+
+.category-item-name{
+    width: 100%;
+    height: 40px;
 }

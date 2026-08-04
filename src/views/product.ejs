@@ -15,6 +15,10 @@
             <div id="product-name"><%= product.product_name %></div>
             <div id="product-price">£<%= product.product_price %></div>
             <div id="product-quantity">quantity:<%= product.product_quantity %></div>
+            <form id="product-delete-form" action="/products/<%= product.product_id %>/delete" method="POST"
+                onsubmit="return confirm('Delete this product? This cannot be undone.');">
+                <button id="product-delete" type="submit">Delete</button>
+            </form>
         </div>
     </div>
 </body>
